@@ -2,8 +2,6 @@
 
 ## plot2.R
 
-library(lubridate)
-
 fileUrl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 destZipFile <- "household_power_consumption.zip"
 destFile <- "household_power_consumption.txt"
