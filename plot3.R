@@ -31,8 +31,7 @@ close(fcon)
 names(data) <- c("Date","Time","Global_active_power","Global_reactive_power","Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3")
 
 # convert Date and Time to Date/Time variables
-data <- transform(data, Date = as.Date(Date, format = "%d/%m/%Y"), Time = strptime(Time, format = "%H:%M:%S"))
-data <- transform(data, datetime = update(Time, year = year(Date), month = month(Date), day = day(Date)))
+data <- transform(data, datetime = as.POSIXct(paste(Date, Time), format = "%d/%m/%Y %H:%M:%S"))
 
 # plot global active power against datetime
 png(filename = "plot3.png")
